@@ -14,11 +14,12 @@ const questions = [
       {
         name: 'movie',
       },
+      new inquirer.Separator(),
       {
         name: 'music',
       },
       {
-        name: 'eat',
+        name: 'eat', 
       },
     ]
   },
