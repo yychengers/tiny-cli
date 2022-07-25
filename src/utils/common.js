@@ -6,6 +6,7 @@ let downloadGit = require('download-git-repo');
 downloadGit = promisify(downloadGit);
 
 const downDir = async (obj) => {
+  // 调用downloadGit方法，下载仓库源码，
   let project = `orgyyc/${obj.repo}`;
   let dest = obj.path ? `${obj.path}/${obj.name}` : `./${obj.name}`;
   
@@ -34,7 +35,7 @@ const getRepoList = async () => {
   return data;
 };
 
-// 封装loading效果
+// 封装loading效果， 用到了ora仓库，展示一些loading的效果，扩展使用方法可以参考ora的github链接
 const loadingFn = async (fn, message, obj) => { 
   const spinner = ora(message);
   spinner.start();

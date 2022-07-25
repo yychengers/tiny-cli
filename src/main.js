@@ -1,12 +1,15 @@
 const process = require('process');
 const path = require('path');
+const { join } = require('path');
+
+
 const program = require('commander');
 
 const { orderList }= require('./utils/common');
 const { version } = require('../package.json')
 
 const { create } = require('./create');
-const { join } = require('path');
+
 
 // Object.keys(orderList).forEach((order) => {
 //   program
@@ -35,7 +38,7 @@ program
     // require(path.join(__dirname, 'create'))(...process.argv.slice(3));
     console.log(process.argv, 'sss');
     const list = process.argv.slice(3);
-    create(list[0], list[2]);
+    create(list[0], list[2]); // 这两个参数分别对应命令和目录  list[0] = 'create', list[2] = 'folderName';
   })
 
 // 监听用户的help事件
